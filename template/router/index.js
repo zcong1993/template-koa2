@@ -16,7 +16,7 @@ router.get('/session', async (ctx) => {
   ctx.session.n = ctx.session.n ? ctx.session.n + 1 : 1
   await ctx.render('session', ctx.session)
 })
-<% } %>
+<%_ } -%>
 
 module.exports = () => compose([
   router.routes(),
