@@ -6,4 +6,9 @@ html
     h1 Hello Koa2
     .container
       p pug template
-      a(href="/user/zcong1993") zcong1993
+      p
+        a(href="/user/zcong1993") zcong1993
+      <%_ if (session) { -%>
+      p
+        a(href="/session") session
+      <%_ } -%>

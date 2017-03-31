@@ -31,6 +31,9 @@ module.exports = {
       default: false
     }
   },
+  filters: {
+    'views/session.pug': 'session'
+  },
   move: {
     'gitignore': '.gitignore'
   },
