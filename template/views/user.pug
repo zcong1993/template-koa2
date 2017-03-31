@@ -1,8 +1,13 @@
 html
   head
-    title test
+    link(href='/css/main.css', rel="stylesheet")
+    title user
   body
     h1 Hello #{name}
     .container
       p pug template
-      p session: #{session}
+      p
+        a(href="https://github.com/zcong1993") github
+      p
+        a(href="/") back
+

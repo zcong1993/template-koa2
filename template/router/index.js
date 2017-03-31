@@ -8,18 +8,7 @@ router.get('/', async (ctx) => {
 })
 
 router.get('/user/:name', async (ctx) => {
-  await ctx.render('user', Object.assign({}, ctx.params, {session: ctx.session.name}))
-})
-
-router.get('/login', async (ctx) => {
-  console.log(ctx.session)
-  ctx.session.name = 'zcong'
-  ctx.body = 'login'
-})
-
-router.post('/post', async (ctx) => {
-  console.log(ctx.request.body)
-  await ctx.render('user', ctx.request.body)
+  await ctx.render('user', ctx.params)
 })
 
 module.exports = () => compose([

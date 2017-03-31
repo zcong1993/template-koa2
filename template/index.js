@@ -1,8 +1,8 @@
 const Koa = require('koa')
 const views = require('koa-views')
 const bodyParser = require('koa-bodyparser')
-const static = require('koa-static')
-const session = require('koa-session')
+const static = require('koa-static')<% if (session){ %>
+const session = require('koa-session')<% } %>
 const routes = require('./router')
 
 const app = new Koa()<% if (session){ %>
