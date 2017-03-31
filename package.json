@@ -1,0 +1,15 @@
+{
+  "name": "template-koa2",
+  "version": "0.0.0",
+  "description": "SAO template for koa2",
+  "repository": {
+    "url": "zcong1993/template-koa2",
+    "type": "git"
+  },
+  "author": "zcong1993 <1005997919@qq.com> (github.com/zcong1993)",
+  "license": "MIT",
+  "files": [
+    "sao.js",
+    "template"
+  ]
+}
