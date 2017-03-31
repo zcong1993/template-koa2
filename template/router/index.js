@@ -7,6 +7,11 @@ router.get('/', async (ctx) => {
   await ctx.render('index')
 })
 
+router.post('/echo', async ctx => {
+  console.log(ctx.request.body)
+  ctx.response.body = ctx.request.body
+})
+
 router.get('/user/:name', async (ctx) => {
   await ctx.render('user', ctx.params)
 })
