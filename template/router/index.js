@@ -8,9 +8,9 @@ const router = new Router()<% if (!simple) { %>
 
 router.get('/', index.index)<% } %>
 
-router.post('/echo', api.echo)
+router.post('/echo', api.echo)<% if (!simple) { %>
 
-router.get('/user/:name', index.user)<% if (session) { %>
+router.get('/user/:name', index.user)<% } %><% if (session) { %>
 
 router.get('/session', session.session)<% } %>
 
