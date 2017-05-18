@@ -40,7 +40,8 @@ module.exports = {
   filters: {
     'views/**': '!simple',
     'public/**': '!simple',
-    'controllers/(index|session).js': '!simple',
+    'controllers/index.js': '!simple',
+    'controllers/session.js': '!simple',
     'views/session.pug': 'session',
     'controllers/session.js': 'session'
   },
