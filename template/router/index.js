@@ -6,7 +6,7 @@ const session = require('../controllers/session')<% } %><% } %>
 
 const router = new Router()<% if (!simple) { %>
 
-router.get('/', <%= simple ? "api.index":"index.index" %>)
+router.get('/', index.index)
 
 router.post('/echo', api.echo)<% if (!simple) { %>
 
