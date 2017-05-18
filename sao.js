@@ -25,14 +25,23 @@ module.exports = {
       },
       store: true
     },
+    simple: {
+      message: 'Use simple template?',
+      type: 'confirm',
+      default: true
+    },
     session: {
       message: 'Need session support?',
       type: 'confirm',
-      default: false
+      default: false,
+      when: answers => !answers.simple
     }
   },
   filters: {
-    'views/session.pug': 'session'
+    'views/**': '!simple',
+    'controllers/(index|session).js': '!simple',
+    'views/session.pug': 'session',
+    'controllers/session.js': 'session'
   },
   move: {
     'gitignore': '.gitignore'

@@ -1,27 +1,18 @@
 const compose = require('koa-compose')
 const Router = require('koa-router')
+const api = require('../controllers/api')<% if (!simple) { %>
+const index = require('../controllers/index')<% if (session) { %>
+const session = require('../controllers/session')<% } %><% } %>
 
-const router = new Router()
+const router = new Router()<% if (!simple) { %>
 
-router.get('/', async (ctx) => {
-  await ctx.render('index')
-})
+router.get('/', index.index)<% } %>
 
-router.post('/echo', async ctx => {
-  console.log(ctx.request.body)
-  ctx.response.body = ctx.request.body
-})
+router.post('/echo', api.echo)
 
-router.get('/user/:name', async (ctx) => {
-  await ctx.render('user', ctx.params)
-})
-<%_ if (session) { -%>
+router.get('/user/:name', index.user)<% if (session) { %>
 
-router.get('/session', async (ctx) => {
-  ctx.session.n = ctx.session.n ? ctx.session.n + 1 : 1
-  await ctx.render('session', ctx.session)
-})
-<%_ } -%>
+router.get('/session', session.session)<% } %>
 
 module.exports = () => compose([
   router.routes(),
