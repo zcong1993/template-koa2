@@ -1,7 +1,7 @@
-const Koa = require('koa')
+const Koa = require('koa')<% if (!simple) { %>
 const views = require('koa-views')
-const bodyParser = require('koa-bodyparser')
-const static = require('koa-static')<% if (session){ %>
+const static = require('koa-static')<% } %>
+const bodyParser = require('koa-bodyparser')<% if (session){ %>
 const session = require('koa-session')<% } %>
 const routes = require('./router')
 
@@ -16,9 +16,9 @@ const sessionConfig = {
   signed: true, /** (boolean) signed or not (default true) */
 }
 
-app.use(session(sessionConfig, app))<% } %>
+app.use(session(sessionConfig, app))<% } %><% if (!simple) { %>
 app.use(static(__dirname + '/public'))
-app.use(views(__dirname + '/views', { extension: 'pug' }))
+app.use(views(__dirname + '/views', { extension: 'pug' }))<% } %>
 app.use(bodyParser())
 app.use(routes())
 
