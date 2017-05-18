@@ -4,9 +4,9 @@ const api = require('../controllers/api')<% if (!simple) { %>
 const index = require('../controllers/index')<% if (session) { %>
 const session = require('../controllers/session')<% } %><% } %>
 
-const router = new Router()<% if (!simple) { %>
+const router = new Router()
 
-router.get('/', index.index)
+router.get('/', <%= simple ? "api.index":"index.index" %>)
 
 router.post('/echo', api.echo)<% if (!simple) { %>
 
