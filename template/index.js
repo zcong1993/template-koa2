@@ -1,11 +1,13 @@
-const Koa = require('koa')<% if (!simple) { %>
+const Koa = require('koa')
+const logger = require('koa-logger')<% if (!simple) { %>
 const views = require('koa-views')
 const static = require('koa-static')<% } %>
 const bodyParser = require('koa-bodyparser')<% if (session){ %>
 const session = require('koa-session')<% } %>
 const routes = require('./router')
 
-const app = new Koa()<% if (session){ %>
+const app = new Koa()
+app.use(logger())<% if (session){ %>
 app.keys = ['koa:keys']
 
 const sessionConfig = {
