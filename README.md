@@ -2,6 +2,11 @@
 
 > SAO template for koa2
 
+## Changelog
+
+- support test
+- use [autod](https://github.com/node-modules/autod) bump version
+
 ## Usage
 
 Install [SAO](https://github.com/egoist/sao) first.
