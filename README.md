@@ -9,13 +9,14 @@ Install [SAO](https://github.com/egoist/sao) first.
 ### From git
 
 ```bash
-sao zcong1993/template-koa2
+$ sao zcong1993/template-koa2 [your project name] --install
 ```
 
 ### From npm
 
 ```bash
-sao koa2
+$ npm install -g template-koa2
+$ sao koa2
 ```
 
 ## License
