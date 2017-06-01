@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node index.js",
     "autod": "autod"<% if (test){ %>,
-    "test": "cross-env NODE_ENV=test mocha -u bdd"<% } %>
+    "test": "cross-env NODE_ENV=test mocha -u bdd"<% } %><% if (watch){ %>,
+    "dev": "nodemon index.js --config nodemon.json"<% } %>
   },
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
@@ -25,7 +26,8 @@
     "pug": "^2.0.0-rc.1"<% } %>
   },
   "devDependencies": {
-    "autod": "^2.8.0"<% if (test){ %>,
+    "autod": "^2.8.0"<% if (watch){ %>,
+    "nodemon": "^1.11.0"<% } %><% if (test){ %>,
     "cross-env": "^5.0.0",
     "mocha": "^3.4.2",
     "power-assert": "^1.4.2",

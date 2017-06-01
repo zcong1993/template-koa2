@@ -7,6 +7,7 @@
 
 ## Changelog
 
+- support auto reload on dev mode
 - support test
 - use [autod](https://github.com/node-modules/autod) bump version
 

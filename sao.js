@@ -40,6 +40,11 @@ module.exports = {
       message: 'Need test ?',
       type: 'confirm',
       default: true
+    },
+    watch: {
+      message: 'Need auto reload on dev mode ?',
+      type: 'confirm',
+      default: true
     }
   },
   filters: {
@@ -49,7 +54,8 @@ module.exports = {
     'controllers/session.js': '!simple',
     'views/session.pug': 'session',
     'controllers/session.js': 'session',
-    'test/**': 'test'
+    'test/**': 'test',
+    'nodemon.json': 'watch'
   },
   move: {
     'gitignore': '.gitignore'
