@@ -26,15 +26,20 @@ module.exports = {
       store: true
     },
     simple: {
-      message: 'Use simple template?',
+      message: 'Use simple template ?',
       type: 'confirm',
       default: true
     },
     session: {
-      message: 'Need session support?',
+      message: 'Need session support ?',
       type: 'confirm',
       default: false,
       when: answers => !answers.simple
+    },
+    test: {
+      message: 'Need test ?',
+      type: 'confirm',
+      default: true
     }
   },
   filters: {
@@ -43,15 +48,13 @@ module.exports = {
     'controllers/index.js': '!simple',
     'controllers/session.js': '!simple',
     'views/session.pug': 'session',
-    'controllers/session.js': 'session'
+    'controllers/session.js': 'session',
+    'test/**': 'test'
   },
   move: {
     'gitignore': '.gitignore'
   },
-  post({log, chalk, isNewFolder, folderName}) {
-    log.success('Done!')
-    if (isNewFolder) {
-      log.info(`cd ${chalk.yellow(folderName)} to get started!`)
-    }
-  }
+  showTip: true,
+  installDependencies: false,
+  gitInit: true
 }
