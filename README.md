@@ -1,7 +1,6 @@
 # template-koa2
 
 [![NPM version](https://img.shields.io/npm/v/template-koa2.svg?style=flat)](https://npmjs.com/package/template-koa2)
-
 [![NPM downloads](https://img.shields.io/npm/dm/template-koa2.svg?style=flat)](https://npmjs.com/package/template-koa2)
 
 > SAO template for koa2
