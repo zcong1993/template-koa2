@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const errorHandler = require('koa-error')
 const logger = require('koa-logger')<% if (!simple) { %>
 const views = require('koa-views')
 const static = require('koa-static')<% } %>
@@ -7,6 +8,7 @@ const session = require('koa-session')<% } %>
 const routes = require('./router')
 
 const app = new Koa()
+app.use(errorHandler())
 if (process.env.NODE_ENV !== 'test') {
   app.use(logger())
 }<% if (session){ %>

@@ -8,6 +8,7 @@ module.exports = {
     'koa',
     'koa-bodyparser',
     'koa-compose',
+    'koa-error',
     'koa-logger',
     'koa-router'<% if (session){ %>,
     'koa-session'<% } %><% if (!simple){ %>,
