@@ -30,6 +30,11 @@ module.exports = {
       type: 'confirm',
       default: true
     },
+    cors: {
+      message: 'Need cors support ?',
+      type: 'confirm',
+      default: false
+    },
     session: {
       message: 'Need session support ?',
       type: 'confirm',
