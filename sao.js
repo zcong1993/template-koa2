@@ -59,8 +59,7 @@ module.exports = {
     'controllers/session.js': '!simple',
     'views/session.pug': 'session',
     'controllers/session.js': 'session',
-    'test/**': 'test',
-    'nodemon.json': 'watch'
+    'test/**': 'test'
   },
   move: {
     'gitignore': '.gitignore'
