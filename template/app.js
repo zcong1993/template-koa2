@@ -3,7 +3,7 @@ const onerror = require('koa-onerror')<% if (cors){ %>
 const cors = require('kcors')<% } %>
 const logger = require('koa-logger')<% if (!simple) { %>
 const views = require('koa-views')
-const static = require('koa-static')<% } %>
+const koaStatic = require('koa-static')<% } %>
 const bodyParser = require('koa-bodyparser')<% if (session){ %>
 const session = require('koa-session')<% } %>
 const routes = require('./router')
@@ -25,7 +25,7 @@ const sessionConfig = {
 }
 
 app.use(session(sessionConfig, app))<% } %><% if (!simple) { %>
-app.use(static(__dirname + '/public'))
+app.use(koaStatic(__dirname + '/public'))
 app.use(views(__dirname + '/views', { extension: 'pug' }))<% } %>
 app.use(bodyParser())
 app.use(routes())
