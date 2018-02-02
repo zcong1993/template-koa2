@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const helmet = require('koa-helmet')
 const onerror = require('koa-onerror')<% if (cors){ %>
 const cors = require('kcors')<% } %>
 const logger = require('koa-logger')<% if (!simple) { %>
@@ -8,7 +9,8 @@ const bodyParser = require('koa-bodyparser')<% if (session){ %>
 const session = require('koa-session')<% } %>
 const routes = require('./router')
 
-const app = new Koa()<% if (cors){ %>
+const app = new Koa()
+app.use(helmet())<% if (cors){ %>
 app.use(cors())<% } %>
 onerror(app)
 if (process.env.NODE_ENV !== 'test') {
